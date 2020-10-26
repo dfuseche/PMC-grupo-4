@@ -5,12 +5,12 @@ class UsuarioForm(forms.ModelForm):
     class Meta:
         model = Estudiante
         fields = [
-            'nombre', 'correo', 'descripcion'
+            'nombre','semestre', 'correo', 'descripcion'
         ]
         labels = {
             'nombre': 'Nombre',
             'correo': 'Correo',
-
+            'semestre': 'Edad',
             'descripcion': 'Descripcion',
             
         }

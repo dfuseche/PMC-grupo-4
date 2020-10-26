@@ -1,5 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 
+<head>
+	<link rel="stylesheet" href="../static/css/styles.css">
+</head>
+
 <div class="content">
 	<div class="">
 		<div class="page-header-title">
@@ -20,49 +24,36 @@
 	</div>
 	<br />
 
-	<div class="page-content-wrapper">
-		<div class="container">
-			<!-- Content page -->
-
-			<div class="panel panel-default">
-				<div class="panel-body">
-					
-						<tbody>
-							{% for registro in registro_list %}
-							
-							<div class="container" align = 'center'>
-								<div class="row">
-					
-								  <div class="col-sm">
-								
-									<div class="card" style="width: 30rem;">
-										<img style="width:100%; " src="{{registro.url}}" />
-										<div class="card-body">
-										  <h5 class="card-title">{{ registro.titulo }}</h5>
-										  <p class="card-text">{{ registro.autor }}</p>
-										  <a href="#" class="btn btn-primary stretched-link">Más información</a>
-										</div>
-									  </div>
-								  </div>
-								
-								</div>
-							  </div>
-							{% endfor %}
-						</tbody>
-					
-
-					<div style="text-align: center">
-						<button
-							type="button"
-							class="btn btn-primary waves-effect waves-light"
-							onClick=" window.location.href='/' "
-						>
-							Volver
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
+	<section class="insta">
+		<section class="insta-gallery">
+			{% for registro in registro_list %}
+			<section class="insta-picture-container">
+				<img class="insta-picture" src="{{registro.url}}"/>
+				<section class="insta-picture-data">
+					<h5 class="card-title">{{ registro.titulo }}</h5>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					20.000 Pesos
+					<p class="card-text">{{ registro.autor }}</p>
+				</section>
+    		</section>		
+			{% endfor %}
+		</section>
+	</section>
+	<div style="text-align: center">
+		<button
+			type="button"
+			class="btn btn-primary waves-effect waves-light"
+			onClick=" window.location.href='/' ">
+			Volver
+		</button>
 	</div>
+	<br>
+	<br>
+	
 </div>
 {% endblock %}
