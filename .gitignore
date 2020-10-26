@@ -109,3 +109,5 @@ ENV/
 **/migrations/**
 !**/migrations
 !**/migrations/__init__.py
+registros/static/keys.txt
+usuario/static/userkeys.txt

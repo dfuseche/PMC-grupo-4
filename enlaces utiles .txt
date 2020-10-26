@@ -1,0 +1,19 @@
+ISIS2503 - Buenas Practicas en Django y Vista de Desarrollo
+https://www.youtube.com/watch?v=ln6SNWhnoGk&list=PLEYKIiHJRokCyNZkQGRtG1IImvHmrs1Z3&index=2
+
+
+Writing your first Django app, part 2
+https://docs.djangoproject.com/en/3.1/intro/tutorial02/
+
+S3 Documentation
+https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
+
+S3 Tutorial Django
+https://simpleisbetterthancomplex.com/tutorial/2017/08/01/how-to-setup-amazon-s3-in-a-django-project.html
+
+S3 Tutorial Django 2
+https://blog.theodo.com/2019/07/aws-s3-upload-django/
+
+aws educate acc
+https://www.awseducate.com/student/s/awssite
+

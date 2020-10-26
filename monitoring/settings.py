@@ -37,15 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
     'measurements',
     'variables',
+    'registros',
+    'usuario',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -71,6 +73,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'monitoring.wsgi.application'
 
+#S3
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_STORAGE_BUCKET_NAME = 'isis2503g5booklicks3'
+AWS_S3_REGION_NAME = 'us-east-1'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_ACCESS_KEY_ID='0'
+AWS_SECRET_ACCESS_KEY='0'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
@@ -78,11 +87,11 @@ WSGI_APPLICATION = 'monitoring.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'name_db',
-        'USER': 'user_db',
-        'PASSWORD': 'user_password',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'revintagedb',
+        'USER': 'postgres',
+        'PASSWORD': 'isis2503',
+        'HOST': 'isis2503user.ccdgk5eedbls.us-east-1.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
