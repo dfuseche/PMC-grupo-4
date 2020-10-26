@@ -4,7 +4,9 @@
     {% csrf_token %}
     <br>
     {{ form.as_p }}
-    <button type="button" class="btn btn-success waves-effect waves-light"  onClick=" window.location.href='/usuarios' ">Crear</button>
+    <button type="submit" class="btn btn-success waves-effect waves-light">
+		Crear
+	</button>
     <button type="button" class="btn btn-primary waves-effect waves-light"
                                 onClick=" window.location.href='/registros' ">Volver
     </button>
