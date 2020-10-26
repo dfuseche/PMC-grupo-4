@@ -9,13 +9,15 @@ class RegistroForm(forms.ModelForm):
         fields = [
             'titulo',
             'autor',
+            
         ]
 
         labels = {
             'titulo': 'Nombre',
-            'autor': 'vendedor',
+            'autor': 'Vendedor',
             'file':'Archivo',
             'nombre':'a',
+
         }
         exclude={'url',}
 
