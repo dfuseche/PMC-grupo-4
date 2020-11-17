@@ -1,58 +1,23 @@
 from django import forms
-from .models import Usuario, Estudiante, Administrativo, Profesor
+from .models import Usuario
 
 class UsuarioForm(forms.ModelForm):
+    password = forms.CharField(label='Password', widget=forms.PasswordInput)
     class Meta:
-        model = Estudiante
+        
+        model = Usuario
         fields = [
-            'nombre','semestre', 'correo', 'descripcion'
+            'username', 'password', 'nombre','edad', 'correo', 'descripcion'
         ]
         labels = {
+            'username': 'Usuario',
+            'password': 'Contraseña',
             'nombre': 'Nombre',
             'correo': 'Correo',
-            'semestre': 'Edad',
+            'edad': 'Edad',
             'descripcion': 'Descripcion',
             
         }
 
 
 
-class EstudianteForm(forms.ModelForm):
-    class Meta:
-        model = Estudiante
-        fields = [
-            'nombre', 'correo', 'descripcion', 'carrera', 'semestre',
-        ]
-        labels = {
-            'nombre': 'Nombre',
-            'correo': 'Correo',
-            'descripcion': 'Descripcion',
-            'carrera': 'Carrera',
-            'semestre': 'Semestre',
-        }
-
-class AdministrativoForm(forms.ModelForm):
-    class Meta:
-        model = Administrativo
-        fields = [
-            'nombre', 'correo', 'descripcion', 'facultad',
-        ]
-        labels = {
-            'nombre': 'Nombre',
-            'correo': 'Correo',
-            'descripcion': 'Descripcion',
-            'facultad': 'Facultad',
-        }
-
-class ProfesorForm(forms.ModelForm):
-    class Meta:
-        model = Profesor
-        fields = [
-            'nombre', 'correo', 'descripcion', 'carrera',
-        ]
-        labels = {
-            'nombre': 'Nombre',
-            'correo': 'Correo',
-            'descripcion': 'Descripcion',
-            'carrera': 'Carrera',
-        }

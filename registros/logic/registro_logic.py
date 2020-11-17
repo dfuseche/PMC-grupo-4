@@ -12,8 +12,10 @@ def get_registros(tipo):
     queryset = tipo.objects.all()
     return (queryset)
 
-def create_registro(form):
+def create_registro(form, request):
     registro = form.save(commit=False)
+    usuarioRegistrado = request.user
+    registro.propietario = usuarioRegistrado
     file = form.cleaned_data['file']
     registro.url = upload_file_s3(file)
     registro.save()

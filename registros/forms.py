@@ -9,12 +9,17 @@ class RegistroForm(forms.ModelForm):
         fields = [
             'titulo',
             'autor',
+            'talla',
+            'precio',
+            
             
         ]
 
         labels = {
             'titulo': 'Nombre',
-            'autor': 'Vendedor',
+            'autor': 'Descripción',
+            'talla': 'Talla',
+            'precio': 'Precio',
             'file':'Archivo',
             'nombre':'a',
 

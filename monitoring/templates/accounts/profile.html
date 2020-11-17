@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}
+<h1>Perfil</h1>
+{% endblock %}
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		
+        
+        
+       <div class="col-md-7 ">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">  <h3 >Perfil del usuario</h3></div>
+        <div class="panel-body">
+       
+        <div class="box box-info">
+        
+            <div class="col-sm-6">
+            <h1 style="color:#00b1b1;">{{usuarioRegistrado.username}}</h1></span>            
+            </div>
+            <div class="clearfix"></div>
+            <hr style="margin:5px 0 5px 0;">
+    
+              
+            <div class="col-sm-5 col-xs-6 tital " >Correo:</div><div class="col-sm-7 col-xs-6 ">{{usuarioHerencia.correo}}</div>
+                <div class="clearfix"></div>
+            <div class="bot-border"></div>
+            <div class="col-sm-5 col-xs-6 tital " >Nombre:</div><div class="col-sm-7 col-xs-6 ">{{usuarioHerencia.nombre}}</div>
+                <div class="clearfix"></div>
+            <div class="bot-border"></div>
+            <div class="col-sm-5 col-xs-6 tital " >Descripción:</div><div class="col-sm-7 col-xs-6 ">{{usuarioHerencia.descripcion}}</div>
+                <div class="clearfix"></div>
+            <div class="bot-border"></div>
+            <div class="col-sm-5 col-xs-6 tital " >Edad:</div><div class="col-sm-7 col-xs-6 ">{{usuarioHerencia.edad}}</div>
+                <div class="clearfix"></div>
+            <div class="bot-border"></div>
+
+
+
+
+            
+          </div>
+          
+
+        </div>
+       
+        <h1>Ropa que vende {{usuarioRegistrado.username}}</h1>
+        <div style="text-align: right">
+            <button
+                type="button"
+                class="btn btn-success waves-effect waves-light"
+                onClick=" window.location.href='/registroCreate' "
+                style="text-align: center"
+            >
+                Agregar ropa
+            </button>
+        </div>
+        {% for registro in registrosDelusuario %}
+
+                <div class="col">
+                    <div class="card" style="width: 12rem; margin-bottom: 50px; ">
+                        <img src="{{registro.url}}" class="card-img-top" alt="..." >
+                        <div class="card-body">
+                          <h5 class="card-title">{{registro.titulo}}</h5>
+                         
+                        </div>
+                      </div>
+                  </div>
+                  <br>
+        {% endfor %}
+    </div> 
+    </div>
+</div>  
+    
+       
+       
+       
+       
+       
+       
+       
+       
+       
+   </div>
+</div>
+{% endblock %}

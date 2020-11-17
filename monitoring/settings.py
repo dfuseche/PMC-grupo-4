@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'variables',
     'registros',
     'usuario',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -89,8 +90,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'revintagedb',
         'USER': 'postgres',
-        'PASSWORD': 'isis2503',
-        'HOST': 'isis2503user.ccdgk5eedbls.us-east-1.rds.amazonaws.com',
+        'PASSWORD': 'revintagedb',
+        'HOST': 'revintagedb.ccdgk5eedbls.us-east-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
