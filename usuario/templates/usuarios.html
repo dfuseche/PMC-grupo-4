@@ -26,6 +26,7 @@
                             <th>Nombre</th>
                             <th>Correo</th>
                             <th>Descripcion</th>
+                            <th>Ver perfil</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -35,6 +36,11 @@
                             <td>{{ usuario.nombre }}</td>
                             <td>{{ usuario.correo }}</td>
                             <td>{{ usuario.descripcion }}</td>
+                            <td><a
+                                href="{% url 'usuarioDetail' pk=usuario.username %}"
+                                class="btn btn-primary"
+                                >Ver perfil</a
+                            ></td>
                         </tr>
                         {% endfor %}
 

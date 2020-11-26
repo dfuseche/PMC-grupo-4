@@ -1,0 +1,6 @@
+{% extends 'base.html' %} {% block content %}
+<form action= '' method='POST'>{%csrf_token%}
+    <h1>Quieres borrar esta prenda {{object.titulo}}</h1>
+	<p><input type='submit' value= 'Si'/> <a href="../">Cancel</a></p>
+</form>
+{% endblock %}

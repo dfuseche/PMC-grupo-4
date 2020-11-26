@@ -10,6 +10,7 @@ class Usuario(User):
     correo = models.CharField(max_length = 100)
     descripcion = models.TextField()
     edad = models.IntegerField()
+  
      
 
 

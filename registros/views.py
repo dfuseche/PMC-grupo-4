@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from .forms import *
 from django.db.models import Q
 from django.contrib import messages
@@ -43,3 +43,11 @@ def registro_create(request):
 
     return render(request, 'registroCreate.html', context)
 
+def delete_registro(request, pk):
+    obj = get_object_or_404(Registro, pk = pk)
+    if request.method == "POST":
+        obj.delete()
+        print("entro")
+        return redirect('../')
+    print("no entro")
+    return render(request, "registroDelete.html", {"object": obj})

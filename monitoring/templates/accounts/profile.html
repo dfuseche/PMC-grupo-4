@@ -57,19 +57,27 @@
                 Agregar ropa
             </button>
         </div>
-        {% for registro in registrosDelusuario %}
+        <div class="container">
+            <div class="row">
+                    {% for registro in registrosDelusuario %}
 
-                <div class="col">
-                    <div class="card" style="width: 12rem; margin-bottom: 50px; ">
-                        <img src="{{registro.url}}" class="card-img-top" alt="..." >
-                        <div class="card-body">
-                          <h5 class="card-title">{{registro.titulo}}</h5>
-                         
-                        </div>
-                      </div>
-                  </div>
-                  <br>
-        {% endfor %}
+                            <div class="col">
+                                <div class="card" style="width: 12rem; margin-bottom: 50px; ">
+                                    <img src="{{registro.url}}" class="card-img-top"  style="width: 12rem; height: 12rem;"alt="..." >
+                                    <div class="card-body">
+                                    <h5 class="card-title">{{registro.titulo}}</h5>
+                                    <a
+                                    href="{% url 'registro-delete' pk=registro.pk %}"
+                                    class="btn btn-primary"
+                                    >Dejar de vender</a
+                                > 
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                    {% endfor %}
+            </div>
+        </div>
     </div> 
     </div>
 </div>  

@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from . import views
-
+from django.contrib.auth.views import logout_then_login
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
@@ -25,6 +25,7 @@ urlpatterns = [
     path('', include('registros.urls')),
     path('', include('usuario.urls')),
     path('', include("django.contrib.auth.urls")),
-    path('accounts/profile/', views.perfil_usuario)
-
+    path('accounts/profile/', views.perfil_usuario),
+    path('logout/', logout_then_login, name = 'logout'),
+    
 ]
