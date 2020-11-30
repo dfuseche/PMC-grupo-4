@@ -7,6 +7,7 @@ from .logic.logic_usuario import *
 from django.shortcuts import redirect
 from registros.models import Registro
 from django.contrib.auth.models import User
+from usuario.models import Usuario
 
 def usuario_list(request):
     usuarios = get_usuarios()

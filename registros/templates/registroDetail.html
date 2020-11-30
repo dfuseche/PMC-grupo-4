@@ -1,0 +1,144 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="container">
+	<div class="row">
+		
+        
+        
+       <div class="col-md-7 ">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">  <h3 >Información del vendedor</h3></div>
+        <div class="panel-body">
+       
+        <div class="box box-info">
+        
+            <div class="col-sm-6">
+            <h1 style="color:#00b1b1;">{{usuario.username}}</h1></span>            
+            </div>
+            <div class="clearfix"></div>
+            <hr style="margin:5px 0 5px 0;">
+    
+              
+            <div class="col-sm-5 col-xs-6 tital " >Correo:</div><div class="col-sm-7 col-xs-6 ">{{usuario.correo}}</div>
+                <div class="clearfix"></div>
+            <div class="bot-border"></div>
+            <div class="col-sm-5 col-xs-6 tital " >Nombre:</div><div class="col-sm-7 col-xs-6 ">{{usuario.nombre}}</div>
+                <div class="clearfix"></div>
+            <div class="bot-border"></div>
+            <div class="col-sm-5 col-xs-6 tital " >Descripción:</div><div class="col-sm-7 col-xs-6 ">{{usuario.descripcion}}</div>
+                <div class="clearfix"></div>
+            <div class="bot-border"></div>
+            <div class="col-sm-5 col-xs-6 tital " >Edad:</div><div class="col-sm-7 col-xs-6 ">{{usuario.edad}}</div>
+                <div class="clearfix"></div>
+            <div class="bot-border"></div>
+
+
+
+
+            
+          </div>
+          
+
+        </div>
+       
+        <h1>Prenda de {{usuario.username}}</h1>
+        <div class="card mb-3">
+            <img src="{{registro.url}}"  class="card-img-top" alt="...">
+            <div class="card-body">
+                <div class="container">
+                    <div class="row">
+                      <div class="col">
+                        Nombre
+                      </div>
+                      <div class="col">
+                        {{registro.titulo}}
+                      </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                      <div class="col">
+                        Descripción:
+                      </div>
+                      <div class="col">
+                        {{registro.autor}}
+                      </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                      <div class="col">
+                        Precio:
+                      </div>
+                      <div class="col">
+                        {{registro.precio}}
+                      </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                      <div class="col">
+                        Talla:
+                      </div>
+                      <div class="col">
+                        {{registro.talla}}
+                      </div>
+                    </div>
+                </div>
+                
+            </div>
+          </div>
+
+          {%if registros%}
+          <h1>Ropa que iría bien con esta prenda</h1>
+
+
+          <div class="container">
+              <div class="row">
+                  {% for registro in registros %}
+                  <div class="col">
+                      <div class="card" style="width: 12rem; margin-bottom: 50px">
+                          <img src="{{registro.url}}"  style="width: 12rem; height: 12rem;" class="card-img-top" alt="..." />
+                          <div class="card-body">
+                              <h5 class="card-title">{{registro.titulo}}</h5>
+                          </div>
+                          <a
+                          href="{% url 'registroDetail' pk=registro.pk %}"
+                          class="btn btn-primary"
+                          >Comprar</a
+                      >
+                      </div>
+                  </div>
+                  <br />	
+                  {% endfor %}
+              </div>
+          </div>
+          {%endif%}
+
+          {%if not registros%}
+          <h1>No hay ropa que convine con esta prenda</h1>
+          {%endif%}
+        
+            
+        
+       
+    </div> 
+    </div>
+</div>  
+    
+       
+       
+       
+       
+       
+       
+       
+       
+       
+   </div>
+</div>
+{% endblock %}

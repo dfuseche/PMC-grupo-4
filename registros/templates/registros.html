@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-
+{% load static %}
   
 <head>
 	<link rel="stylesheet" href="../static/css/styles.css">
@@ -35,6 +35,11 @@
 					<br>
 					Talla: {{registro.talla}}
 					<p class="card-text">{{ registro.autor }}</p>
+					<a
+                                href="{% url 'registroDetail' pk=registro.pk %}"
+                                class="btn btn-primary"
+                                >Comprar</a
+                            >
 				</section>
     		</section>		
 			{% endfor %}
